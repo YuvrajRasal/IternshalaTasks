@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --header: #0f1629;
+    --menu:  #e3f2fd;
+    --hero: #4c86c6;
+    --main: #24344b;
+    --image: #c1e4e6;
+    --extra: #4bbd97;
+    --banner: #fed269;
+    --black: #000000;
+    --white: #ffffff;
+}
+
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 6fr 2fr 2fr 2fr;
+    grid-template-areas:
+    "menu main main main main main main"
+    "menu main main main main main main"
+    "menu main main main main main main"
+    "menu main main main main main main"
+    "menu main main main main main main";
+}
+
+.menu {
+    grid-area: menu;
+    background-color: var(--menu);
+    color: var(--white);
+}
+
+.main {
+    grid-area: main;
+    background-color: var(--main);
+    color: var(--white);
+}
+/* NEW */
+.box {
+    display: flex;
+    height: 100vh;
+    /* width: fit-content; */
+    flex-direction: column;
+    justify-content: space-between;
+    /* padding: 10px 10px; */
+  }
+  .box .list {
+    list-style: none;
+  }
+  .list .nav-link {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    padding: 14px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  .lists .nav-link:hover {
+    background-color: #4070f4;
+  }
+  .nav-link .icon {
+    margin-right: 14px;
+    font-size: 20px;
+    color: #707070;
+  }
+  .nav-link .link {
+    font-size: 16px;
+    color: #707070;
+    font-weight: 400;
+  }
+  .lists .nav-link:hover .icon,
+  .lists .nav-link:hover .link {
+    color: #fff;
+  }
+
+
+@media only screen and (max-width: 800px){
+    .container{
+        display: grid;
+        height: 100vh;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 4fr 4fr 2fr 2fr;
+        grid-template-areas: 
+        "header header header header"
+        "hero hero hero hero"
+        "menu main main main"
+        "menu banner banner banner"
+        "menu extra extra image";
+    }
+}
+@media only screen and (max-width: 400px){
+    .container{
+        display: grid;
+        height: 100vh;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image";
+    }
+}
